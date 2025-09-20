@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/vite.svg" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🏢 Product Site</h1>
+                <nav class="nav">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/api" class="nav-link">API</a>
+                    <a href="/health" class="nav-link">Health</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title"><%= message %></h1>
+                <p class="hero-subtitle">
+                    Express.js Backend • Proof of Concept • Team Onboarding
+                </p>
+                <div class="timestamp">
+                    Server started at: <%= timestamp %>
+                </div>
+            </div>
+
+            <div class="welcome-section">
+                <div class="welcome-card">
+                    <h2>🎯 Project Overview</h2>
+                    <p>
+                        This is a proof of concept Express.js backend for our small product site.
+                        Built with clean, scalable architecture to help the team understand the Express framework structure.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>⚡ Backend Features</h3>
+                        <ul class="feature-list">
+                            <% features.forEach(feature => { %>
+                                <li>✓ <%= feature %></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>🔗 API Endpoints</h3>
+                        <div class="endpoint">
+                            <code>GET /</code>
+                            <span>Home page with welcome message</span>
+                        </div>
+                        <div class="endpoint">
+                            <code>GET /api</code>
+                            <span>JSON API response</span>
+                        </div>
+                        <div class="endpoint">
+                            <code>GET /health</code>
+                            <span>Server health check</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h3>🛠️ Technology Stack</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">Node.js</div>
+                        <div class="tech-item">Express.js</div>
+                        <div class="tech-item">EJS Templates</div>
+                        <div class="tech-item">Static Files</div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>🚀 Ready for Development</h3>
+                    <p>The backend is now ready for your team to build amazing features!</p>
+                    <div class="cta-buttons">
+                        <a href="/api" class="btn btn-primary">Test API</a>
+                        <a href="/health" class="btn btn-secondary">Check Health</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Product Site Backend - Express.js Demo</p>
+                <p>Built with ❤️ for team onboarding</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple navigation highlighting
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

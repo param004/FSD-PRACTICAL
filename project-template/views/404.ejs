@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/vite.svg" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🏢 Product Site</h1>
+                <nav class="nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/api" class="nav-link">API</a>
+                    <a href="/health" class="nav-link">Health</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="error-section">
+                <div class="error-card">
+                    <div class="error-icon">😕</div>
+                    <h1 class="error-title">404</h1>
+                    <h2 class="error-message"><%= message %></h2>
+                    <p class="error-description">
+                        The page you're looking for doesn't exist on our server.
+                    </p>
+                    
+                    <div class="error-suggestions">
+                        <h3>Try these instead:</h3>
+                        <ul>
+                            <li><a href="/">🏠 Home Page</a></li>
+                            <li><a href="/api">🔗 API Endpoint</a></li>
+                            <li><a href="/health">💚 Health Check</a></li>
+                        </ul>
+                    </div>
+
+                    <a href="/" class="btn btn-primary">← Back to Home</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Product Site Backend - Express.js Demo</p>
+                <p>Built with ❤️ for team onboarding</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
